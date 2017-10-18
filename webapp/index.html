@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<!-- es handelt sich um ein reines html -->
+
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/>
+<!-- sap-ui-core.js ist wichtig -->
+<!-- folgendes gibt die Bibliothek an , möcgte man weitere Bibliotheken benötigen, dann per KOmma getrennt die nächste anfgen -->
+ <!-- Angabe dss Ziel -->
+ <!-- keine Kommentare innerhalb von Script-->
+ 
+ <!-- Index.html ist nur der Anlasser für den Motor--> 
+		<script src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
+				id="sap-ui-bootstrap"
+				data-sap-ui-libs="sap.m"
+				data-sap-ui-theme="sap_belize">
+		</script>
+		<!-- only load the mobile lib "sap.m" and the "sap_bluecrystal" ist veraltet theme -->
+
+		<script>
+		function onSliderChange(oEvent){
+		  alert("Der Slider  " +
+		        oEvent.getSource().getId()+
+				" wurde verschoben auf Position " +
+				oEvent.getSource().getValue() +
+				" verschoben!");
+		}
+  <!-- Slider wird in den Boddy geschrieben-->
+<!-- placeAt ist wichtig zum Positionieren -->  
+			var oSlider1 = new sap.m.Slider( "Slider1",{
+			 change: onSliderChange, enableTickmarks:true, range:"0,10", min:0, max:100		 	
+			});
+
+			oSlider1.placeAt("content");
+			
+			var oSlider2 = new sap.m.Slider( "Slider2",{
+			 change: onSliderChange
+			});
+			oSlider2.placeAt("content");
+			
+			
+			var oButton = new sap.m.Button({
+			      tooltip: "Hello World", 
+				  text:    "Ich bin ein Knopf"
+				  });
+			 oButton.placeAt("content");
+		</script>
+
+	</head>
+	<!-- hierbei  handel es sich um die Bais CSS-KLasse sapui5 Body-->
+	<body class="sapUiBody" role="application">
+		<div id="content"></div>
+	</body>
+</html>
