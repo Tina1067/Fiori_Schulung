@@ -1,0 +1,6 @@
+{
+  "deploy": {
+    "destination": "T18",
+    "name": "ZTRAININGBG"
+  }
+}

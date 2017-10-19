@@ -27,12 +27,21 @@
 <!--Ab hier wird die Liste eingefügt-->
 					<List
 						headerText="{i18n>pgflightcustomer}"
-						items="{model:'flugkundenModel', path: '/d/results'}" >
+						growing="true"
+						growingThreshold="100"
+						growingScrollToLoad="true"
+						items="{
+							model:'flugkundenModel',
+							path: '/FlugkundenSet',
+							sorter: { path: 'Custname',
+							descending: false
+							}
+						}" >
 <!--Bezug auf das Model nicht vergessen! -->
 <!--Das Komma zischen den {} werden einfach mit ausgegeben-->
-						<StandardListItem
+				<StandardListItem
 							title="{flugkundenModel>Custname}"
-							       description= "{flugkundenModel>Form},
+                            description= "{flugkundenModel>Form},
 							        			 {flugkundenModel>City},
 							        			 {flugkundenModel>Email}"/>
 					</List>

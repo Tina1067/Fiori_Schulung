@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <!-- es handelt sich um ein reines html -->
-
+<!--Ist jetzt statisch und es muss eigentlich nur noch Zeile 18 der Name für die APP angepasst werden-->
 <html>
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,10 +18,7 @@
 				data-sap-ui-resourceroots='{"de.schulung.ersteApp": "./"}'
 				data-sap-ui-theme="sap_belize">
 		</script>
-
-		<!-- only load the mobile lib "sap.m" and the "sap_bluecrystal" ist veraltet theme -->
-
-<!-- registrierung der Files app ist die Bühne (neue APP) und page de Kolisse -->
+<!-- Registrierung der Files app ist die Bühne (neue APP) und page de Kulisse -->
 		<script>
 /*Die folgenden kommentierten Zeilen wurden durch die "Komponente" ersetzt*/
 /*		        sap.ui.localResources("view");
@@ -29,7 +26,7 @@
 				var oApp = sap.ui.view({id:"idApp1", viewName:"view.App", type:sap.ui.core.mvc.ViewType.JS});	        
 				var oApp = sap.ui.view({id:"idApp1", viewName:"view.App", type:sap.ui.core.mvc.ViewType.XML});
 				oApp.placeAt("content");*/
-				/*Ende Komemntar*/
+/*Ende Komemntar*/
 				sap.ui.getCore().attachInit(function () {
 					sap.ui.require([
 						"sap/m/Shell",

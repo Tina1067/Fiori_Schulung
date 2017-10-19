@@ -41,8 +41,15 @@ sap.ui.define([
 			this.setModel(oModel, "dataModel");
 			/*Referenz auf das globale Objekt*/
 /*Für den Zugriff auf die Flugkundendaten*/			
-			var oFlugkundenModel = new sap.ui.model.json.JSONModel("model/flugkunden.json");
-			this.setModel(oFlugkundenModel, "flugkundenModel");
+/*Der Zugriff der im folgenden Auskommentiert wurde wird durch oData Zugriff ersetzt*/
+/*var oFlugkundenModel = new sap.ui.model.json.JSONModel("model/flugkunden.json");
+	this.setModel(oFlugkundenModel, "flugkundenModel");*/
+/*Für ältere Versionen disableHeadRequestForToken wird für neuere nicht benötigt*/
+				var oFlugkundenModel = new sap.ui.model.odata.v2.ODataModel("/sap/opu/odata/sap/ZGW_FLUGKUNDEN_005_SRV",{	
+					disableHeadRequestForToken: true,
+					useBatch: false
+				});
+				this.setModel(oFlugkundenModel, "flugkundenModel");
 		}
 	});
 });
