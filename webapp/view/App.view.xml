@@ -13,13 +13,13 @@
 <!---->
 	<App>
 		<pages>
-			<Page title="Title">
+			<Page title="{i18n>pgTitle}">
 				<content><Slider id="Slider1" value="{dataModel>/value1}" change="onSliderChange" enableTickmarks="true" min="0" max="100" step="5" width="100%"/>
 					<Text text="{path: 'dataModel>/value1'}"/>
 					<Button text="Knopf 2" tooltip="suppi"/>
 					<Slider id="Slider2" value="{model: 'dataModel', path: '/value2'}" change="onSliderChange"/>
 					<Text text="{dataModel>/value2}"/>
-					<Button text="Knopf" tooltip="Hallo Welt"/>
+					<Button text="{i18n>btnText}" tooltip="{i18n>ttButton}"/>
 				</content>
 			</Page>
 		</pages>

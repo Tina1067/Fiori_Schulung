@@ -9,12 +9,7 @@ sap.ui.controller("de.schulung.ersteApp.controller.App", {
 	 */
 	 
 	onInit: function() {
-		var oData = {
-			value1 : 50,
-			value2 : 75
-		};
-		var oModel = new sap.ui.model.json.JSONModel(oData);
-		sap.ui.getCore().setModel(oModel,"dataModel");
+
 	},
 
 	/**
