@@ -1,4 +1,4 @@
-sap.ui.controller("controller.App", {
+sap.ui.controller("de.schulung.ersteApp.controller.App", {
 
 	/**
 	 * Called when a controller is instantiated and its View controls (if available) are already created.

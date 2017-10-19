@@ -1,6 +1,6 @@
 <mvc:View
 	xmlns:mvc="sap.ui.core.mvc"
-	controllerName="controller.App"
+	controllerName="de.schulung.ersteApp.controller.App"
 	xmlns="sap.m">
 
 <!-- Verweis auf den Controller controllerName="controller.App" -->
@@ -14,8 +14,9 @@
 	<App>
 		<pages>
 			<Page title="Title">
-				<content><Slider id="Slider1" value="{dataModel>/value1}" change="onSliderChange"/>
+				<content><Slider id="Slider1" value="{dataModel>/value1}" change="onSliderChange" enableTickmarks="true" min="0" max="100" step="5" width="100%"/>
 					<Text text="{path: 'dataModel>/value1'}"/>
+					<Button text="Knopf 2" tooltip="suppi"/>
 					<Slider id="Slider2" value="{model: 'dataModel', path: '/value2'}" change="onSliderChange"/>
 					<Text text="{dataModel>/value2}"/>
 					<Button text="Knopf" tooltip="Hallo Welt"/>

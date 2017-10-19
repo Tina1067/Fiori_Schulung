@@ -15,6 +15,7 @@
 				id="sap-ui-bootstrap"
 				data-sap-ui-libs="sap.m"
 				data-sap-ui-xx-bindingSyntax="complex"
+				data-sap-ui-resourceroots='{"de.schulung.ersteApp": "./"}'
 				data-sap-ui-theme="sap_belize">
 		</script>
 
@@ -22,11 +23,26 @@
 
 <!-- registrierung der Files app ist die Bühne (neue APP) und page de Kolisse -->
 		<script>
-		        sap.ui.localResources("view");
+/*Die folgenden kommentierten Zeilen wurden durch die "Komponente" ersetzt*/
+/*		        sap.ui.localResources("view");
 		        sap.ui.localResources("controller");
-/*				var oApp = sap.ui.view({id:"idApp1", viewName:"view.App", type:sap.ui.core.mvc.ViewType.JS});*/		        
+				var oApp = sap.ui.view({id:"idApp1", viewName:"view.App", type:sap.ui.core.mvc.ViewType.JS});	        
 				var oApp = sap.ui.view({id:"idApp1", viewName:"view.App", type:sap.ui.core.mvc.ViewType.XML});
-				oApp.placeAt("content");
+				oApp.placeAt("content");*/
+				sap.ui.getCore().attachInit(function () {
+					sap.ui.require([
+						"sap/m/Shell",
+						"sap/ui/core/ComponentContainer"
+					], function (Shell, ComponentContainer) {
+						new Shell({
+							app: new ComponentContainer({
+								height : "100%",
+								name : "de.schulung.ersteApp"
+							})
+						}).placeAt("content");
+				});
+			});	
+	
 		
 		</script>
 
