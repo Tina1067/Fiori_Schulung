@@ -40,7 +40,9 @@ sap.ui.define([
 			var oModel = new sap.ui.model.json.JSONModel(oData);
 			this.setModel(oModel, "dataModel");
 			/*Referenz auf das globale Objekt*/
-
+/*Für den Zugriff auf die Flugkundendaten*/			
+			var oFlugkundenModel = new sap.ui.model.json.JSONModel("model/flugkunden.json");
+			this.setModel(oFlugkundenModel, "flugkundenModel");
 		}
 	});
 });
