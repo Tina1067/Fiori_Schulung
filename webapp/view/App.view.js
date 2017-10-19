@@ -33,6 +33,7 @@ sap.ui.jsview("view.App", {
 			change: oController.onSliderChange
 		});
 
+<!-- Properties Schlüssel:Wert-Paare -->
 		var oText2 = new sap.m.Text({
 			text: "{/value2}"
 		});
@@ -41,7 +42,8 @@ sap.ui.jsview("view.App", {
 			tooltip: "Hello World",
 			text: "Ich bin ein Knopf"
 		});
-
+		
+<!-- Für Aggregationen mit []-->
 		var oPage = new sap.m.Page({
 			title: "Title",
 			content: [

@@ -1,0 +1,26 @@
+<mvc:View
+	xmlns:mvc="sap.ui.core.mvc"
+	controllerName="controller.App"
+	xmlns="sap.m">
+
+<!-- Verweis auf den Controller controllerName="controller.App" -->
+<!-- Namensraum Deklaration generell für alle anderen Elemenete  xmlns="sap.m"-->
+	
+<!-- UI Controll beginnt immer mit Grossbuchstaben App und Page-->
+<!-- pages und conent sind Aggregationen-->
+<!-- Properties sind text="Knopf" als auch der Methodenaufruf change="onSliderChange -->
+<!-- onSlider findet er als Funktion über den ControllerNamen oben -->
+<!---->
+	<App>
+		<pages>
+			<Page title="Title">
+				<content><Slider id="Slider1" value="{dataModel>/value1}" change="onSliderChange"/>
+					<Text text="{path: 'dataModel>/value1'}"/>
+					<Slider id="Slider2" value="{model: 'dataModel', path: '/value2'}" change="onSliderChange"/>
+					<Text text="{dataModel>/value2}"/>
+					<Button text="Knopf" tooltip="Hallo Welt"/>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
