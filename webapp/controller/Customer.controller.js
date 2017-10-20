@@ -5,7 +5,7 @@ sap.ui.define([
 
 		return BaseController.extend("de.schulung.ersteApp.controller.Customer", {
 			onInit: function() {
-				this.getRouter().getRoute("customerDetails").attachPatternMatched(this._onMasterMatched, this);
+				this.getRouter().getRoute("customerDetails").attachPatternMatched(this._onRouterMatched, this);
 			},
 			
 			onNavBack: function() {
@@ -20,8 +20,11 @@ sap.ui.define([
 					this.getRouter().navTo("initial", {}, bReplace);
 				}
 			},
-			
-			_onMasterMatched: function(oEvent) {
+
+/*aus der url 
+http://train18.sap.integrata.net:8000/sap/bc/ui5_ui5/sap/ztrainingbg/index.html#/00000002
+wird heraus gelesen um welchen Customer es geht, steht hinter # das nimmt er /00000002*/			
+			_onRouterMatched: function(oEvent) {
 				var sCustomerId =  oEvent.getParameter("arguments").customerId;
 				var oModel = this.getModel("flugkundenModel");
 				

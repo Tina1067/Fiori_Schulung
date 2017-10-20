@@ -29,6 +29,7 @@ und nur dort wenn die App aufgerufen wird*/
 /*welche Aggregation soll manipuliert werden controlAggregation -> primäre Aggregation*/
 /*wie wird ausgetausch 	transition:  gibt noch weitere*/
 /*Nur Initiale Einstellung für den Router*/
+/*oder flip, fade ist anstatt von transition: "slide" auch möglich*/
 			routing: {
 					config: {
 						routerClass: sap.m.routing.Router,
@@ -36,7 +37,7 @@ und nur dort wenn die App aufgerufen wird*/
 						viewPath: "de.schulung.ersteApp.view",
 						controlId: "app",
 						controlAggregation: "pages",
-						transition: "slide",
+						transition: "fade",
 						async: true
 					},
 /*zwei Router deshalb benötigt man ein Array []*/
