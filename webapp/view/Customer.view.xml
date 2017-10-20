@@ -1,0 +1,38 @@
+<mvc:View
+	xmlns:mvc="sap.ui.core.mvc"
+	controllerName="de.schulung.ersteApp.controller.Customer"
+	xmlns:form="sap.ui.layout.form"
+	xmlns="sap.m">
+	<Page title="Details" navButtonPress="onNavBack" showNavButton="true">
+		<content>
+			<form:SimpleForm
+					editable="false"
+					layout="ResponsiveGridLayout"
+					title="Address"
+					labelSpanXL="3"
+					labelSpanL="3"
+					labelSpanM="3"
+					labelSpanS="12"
+					adjustLabelSpan="false"
+					emptySpanXL="4"
+					emptySpanL="4"
+					emptySpanM="4"
+					emptySpanS="0"
+					columnsXL="1"
+					columnsL="1"
+					columnsM="1"
+					singleContainerFullSize="false" >
+				<form:content>
+					<Label text="Name" />
+					<Text text="{flugkundenModel>Custname}" />
+					<Label text="Street." />
+					<Text text="{flugkundenModel>Street}" />
+					<Label text="ZIP Code/City" />
+					<Text text="{flugkundenModel>Postcode} {flugkundenModel>City}" />
+					<Label text="Country" />
+					<Text text="{flugkundenModel>Countr}" />
+				</form:content>
+			</form:SimpleForm>
+		</content>
+	</Page>
+</mvc:View>

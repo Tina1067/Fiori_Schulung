@@ -1,0 +1,50 @@
+<mvc:View
+	xmlns:mvc="sap.ui.core.mvc"
+	controllerName="de.schulung.ersteApp.controller.List"
+	xmlns="sap.m">
+
+<!-- Verweis auf den Controller controllerName="controller.App" -->
+<!-- Namensraum Deklaration generell für alle anderen Elemenete  xmlns="sap.m"-->
+	
+<!-- UI Controll beginnt immer mit Grossbuchstaben App und Page-->
+<!-- pages und conent sind Aggregationen-->
+<!-- Properties sind text="Knopf" als auch der Methodenaufruf change="onSliderChange -->
+<!-- onSlider findet er als Funktion über den ControllerNamen oben -->
+<!---->
+
+		<Page title="{i18n>pgTitle}">
+				<content>
+<!--Wird ersetzt durch eine Liste und kein Schiebregler soll mehr erscheinen-->
+<!--					<Slider id="Slider1" value="{dataModel>/value1}" change="onSliderChange" enableTickmarks="true" min="0" max="100" step="5" width="100%"/>
+					<Text text="{path: 'dataModel>/value1'}"/>-->
+<!--					<Button text="Knopf 2" tooltip="suppi"/>-->
+<!--					<Button text="{i18n>btnText2}" tooltip="{i18n>ttButton2}"/>
+					<Slider id="Slider2" value="{model: 'dataModel', path: '/value2'}" change="onSliderChange"/>
+					<Text text="{dataModel>/value2}"/>
+					<Button text="{i18n>btnText}" tooltip="{i18n>ttButton}"/>-->
+<!--Ende für Button und Slider-->
+<!--Ab hier wird die Liste eingefügt-->
+					<List
+						headerText="{i18n>pgflightcustomer}"
+						growing="true"
+						growingThreshold="100"
+						growingScrollToLoad="true"
+						items="{
+							model:'flugkundenModel',
+							path: '/FlugkundenSet',
+							sorter: { path: 'Custname',
+							descending: false
+							}
+						}" >
+<!--Bezug auf das Model nicht vergessen! -->
+<!--Das Komma zischen den {} werden einfach mit ausgegeben-->
+				<StandardListItem
+							title="{flugkundenModel>Custname}" type="Navigation" press="onItemPress"
+                            description= "{flugkundenModel>Form},
+							        			 {flugkundenModel>City},
+							        			 {flugkundenModel>Email}"/>
+					</List>
+<!--Ende der Liste-->
+				</content>
+			</Page>
+</mvc:View>

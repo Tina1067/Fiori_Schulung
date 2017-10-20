@@ -15,11 +15,66 @@ sap.ui.define([
 			dependencies: {
 				libs: ["sap.m"]
 			},
-			/*Welcher View soll als erstes geladen werden beim rootView, Typ nicht vergessen*/
+/*Welcher View soll als erstes geladen werden beim rootView, Typ nicht vergessen*/
 			rootView: {
 				viewName: "de.schulung.ersteApp.view.App",
 				type: "XML"
+			},
+			/*neu*/
+/*hier wurde das rooting hinzugefügt*/
+/*immer den Standard Router verwenden von sap.m.routing*/
+/*der über nimmt alles. Den Router bringt Fiori mit ist ein JavaSript, Läuft nur im Browser
+und nur dort wenn die App aufgerufen wird*/
+/*Eindeutige ID für die Bühne über 	controlId: "app",*/
+/*welche Aggregation soll manipuliert werden controlAggregation -> primäre Aggregation*/
+/*wie wird ausgetausch 	transition:  gibt noch weitere*/
+/*Nur Initiale Einstellung für den Router*/
+			routing: {
+					config: {
+						routerClass: sap.m.routing.Router,
+						viewType: "XML",
+						viewPath: "de.schulung.ersteApp.view",
+						controlId: "app",
+						controlAggregation: "pages",
+						transition: "slide",
+						async: true
+					},
+/*zwei Router deshalb benötigt man ein Array []*/
+/*hinter dem Pattern kein Name dann zieht initial*/
+/*falls beim Aufuf eine Customerid mitgegeben wurde soll er "name: "customerDetails" aufrufen*/
+/*	pattern: "{customerId}",verweist nicht auf das Model ist nur ein Platzhalter
+Router haben einen Namen und ist über diesen Namen erreichbar*/
+					routes: [
+						{
+							pattern: "",
+							name: "initial",
+							target: [
+								"list"
+							]					
+						},
+						{
+							pattern: "{customerId}",
+							name: "customerDetails",
+							target: [
+								"details"
+							]
+						}
+					],
+/*oben als Objekt "list" und unten ohne "" nur noch Name der Datei*/
+/*viewLevel: 1 ist standard und sorgt für das Verschieben nach links,
+dieses würde ohne Angabe immer nach links verschoben, 2 sorgt für das Verschieben nach rechts*/
+					targets: {
+						list: {
+							viewName: "List",
+							viewLevel: 1
+						},
+						details: {
+							viewName: "Customer",
+							viewLevel: 2
+						}
+					}
 			}
+			/*neu*/
 		},
 
 		/*Vom Elternelement wird die Methode durchlaufen */
@@ -50,6 +105,8 @@ sap.ui.define([
 					useBatch: false
 				});
 				this.setModel(oFlugkundenModel, "flugkundenModel");
+/*Der Router muss unbeding angelassen werden*/				
+				this.getRouter().initialize();
 		}
 	});
 });
